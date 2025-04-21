@@ -40,26 +40,40 @@
     }
   </style>
 </head>
-<body>
-  <div class="card">
-    <h2>Pay Me via ASB</h2>
-    <pre id="bankDetails">
-ASB Bank
-Account Name: Brad Yip
-Account Number: 12-3136-0233747-00
-Reference: Overload 2025
-    </pre>
-    <button onclick="copyText()">📋 Copy to Clipboard</button>
-    <p style="margin-top: 1rem; font-size: 0.9rem; color: gray;">Paste this into your banking app to make a payment.</p>
-  </div>
 
-  <script>
-    function copyText() {
-      const text = document.getElementById("bankDetails").innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Bank details copied!");
-      });
-    }
-  </script>
+<body>
+
+<div class="card">
+  <h2>💸 Pay Me via ASB 💸</h2>
+  <pre id="bankDetails">
+🏦 ASB Bank  
+👤 Account Name: <span id="accountName">Brad Yip</span>  
+🔢 Account Number: <span id="accountNumber">12-3136-0233747-00</span>  
+📝 Reference: Overload 2025
+  </pre>
+
+  <button onclick="copyName()">👤 Copy Name</button>
+  <button onclick="copyAccount()">🔢 Copy Account Number</button>
+
+  <p style="margin-top: 1rem; font-size: 0.9rem; color: gray;">
+    🧾 Just paste this into your banking app 🥺 🧾
+  </p>
+</div>
+
+<script>
+  function copyName() {
+    const name = document.getElementById("accountName").innerText;
+    navigator.clipboard.writeText(name).then(() => {
+      alert("✅ Name copied to clipboard!");
+    });
+  }
+
+  function copyAccount() {
+    const acc = document.getElementById("accountNumber").innerText;
+    navigator.clipboard.writeText(acc).then(() => {
+      alert("✅ Account number copied to clipboard!");
+    });
+  }
+</script>
 </body>
 </html>
