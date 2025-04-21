@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="color-scheme" content="light">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pay Me via ASB</title>
 <style>
+:root {
+  color-scheme: only light;
+}
   body {
   font-family: sans-serif;
   margin: 0;
@@ -75,7 +79,7 @@ pre div {
   button:hover {
     background: #005fa3;
   }
-
+	
   pre {
     margin-top: 1.5rem;
     font-size: 0.9rem;
@@ -86,19 +90,6 @@ pre div {
   body::before {
     background-image: url('Background.png');
   }
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #f9f9f9; /* same as light mode background */
-    color: black; /* normal text color */
-  }
-
-  .card {
-    background: rgba(255, 255, 255, 0.85); /* same card background */
-    color: black; /* same card text */
-  }
-
-  /* Optional: If you have any other elements that are changing, reset them here */
 }
 </style>
 </head>
