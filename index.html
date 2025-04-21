@@ -91,7 +91,11 @@ pre div {
 <body>
 
 <div class="card">
+<div id="toast" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #0074d9; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; display: none; font-size: 0.9rem; box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 1000;">
+  ✅ Copied!
+</div>	
   <h2 style="text-align: center;">💸 Pay Me via ASB 💸</h2>
+<img src="Logo.png" alt="Logo" style="max-width: 100px; display: block; margin: 0 auto 1rem auto;">
  <pre id="bankDetails">
 🏦 ASB Bank  
 👤 Account Name: <span id="accountName">Brad Yip</span>  
@@ -111,19 +115,29 @@ pre div {
 </div>
 
 <script>
-  function copyName() {
-    const name = document.getElementById("accountName").innerText;
-    navigator.clipboard.writeText(name).then(() => {
-      alert("✅ Name copied to clipboard!");
-    });
-  }
+  function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.innerText = message;
+  toast.style.display = "block";
+  
+  setTimeout(() => {
+    toast.style.display = "none";
+  }, 2000); // Toast disappears after 2 seconds
+}
 
-  function copyAccount() {
-    const acc = document.getElementById("accountNumber").innerText;
-    navigator.clipboard.writeText(acc).then(() => {
-      alert("✅ Account number copied to clipboard!");
-    });
-  }
+function copyName() {
+  const name = document.getElementById("accountName").innerText;
+  navigator.clipboard.writeText(name).then(() => {
+    showToast("✅ Name copied to clipboard!");
+  });
+}
+
+function copyAccount() {
+  const acc = document.getElementById("accountNumber").innerText;
+  navigator.clipboard.writeText(acc).then(() => {
+    showToast("✅ Account number copied to clipboard!");
+  });
+}
 </script>
 </body>
 </html>
