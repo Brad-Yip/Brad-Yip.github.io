@@ -39,15 +39,20 @@
 }
 
   pre {
-    text-align: left;
-    background: #f0f0f0;
-    padding: 1rem;
-    border-radius: 8px;
-    overflow-x: auto;
-    font-size: 0.95rem;
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
+  white-space: pre-wrap;      /* allows wrapping inside <pre> */
+  word-break: break-word;     /* breaks long words like account numbers */
+  text-align: left;
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+}
+
+pre div {
+  display: block;
+  white-space: nowrap;
+}
 
   .buttons {
     display: flex;
@@ -88,12 +93,13 @@
 
 <div class="card">
   <h2>💸 Pay Me via ASB 💸</h2>
-  <pre id="bankDetails">
+ <pre id="bankDetails">
 🏦 ASB Bank  
 👤 Account Name: <span id="accountName">Brad Yip</span>  
-🔢 Account Number:  <span id="accountNumber">12-3136-0233747-00</span>  
+🔢 Account Number:  
+<div id="accountNumber">12-3136-0233747-00</div>  
 📝 Reference: Overload 2025
-  </pre>
+</pre>
 
 <div class="buttons">
   <button onclick="copyName()">👤 Copy Name</button>
