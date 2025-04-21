@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pay Me via ASB</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      text-align: center;
+      background: #f9f9f9;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    pre {
+      text-align: left;
+      background: #f0f0f0;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #0074d9;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Pay Me via ASB</h2>
+    <pre id="bankDetails">
+ASB Bank
+Account Name: John Doe
+Account Number: 12-3456-0789123-00
+Reference: Stickers
+    </pre>
+    <button onclick="copyText()">📋 Copy to Clipboard</button>
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: gray;">Paste this into your banking app to make a payment.</p>
+  </div>
+
+  <script>
+    function copyText() {
+      const text = document.getElementById("bankDetails").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Bank details copied!");
+      });
+    }
+  </script>
+</body>
+</html>
