@@ -39,6 +39,16 @@
   width: 400px;
   box-sizing: border-box;
 }
+.logo {
+  background: linear-gradient(white, white);
+  padding: 24px; /* Increase padding for a better effect */
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto 1rem auto;
+  max-width: 100%;
+  height: auto; /* Ensures proper scaling */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* optional: adds a soft shadow */
+}
 
   pre {
   white-space: pre-wrap;      /* allows wrapping inside <pre> */
@@ -84,6 +94,10 @@ pre div {
   }
 
   @media (max-width: 480px) {
+.logo {
+    max-width: 120px; /* Or adjust to your preference */
+    height: auto; /* Ensures the aspect ratio stays the same */
+  }
   body::before {
     background-image: url('Background.png');
   }
