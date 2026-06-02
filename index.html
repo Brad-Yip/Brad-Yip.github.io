@@ -155,6 +155,8 @@ function copyAccount() {
   navigator.clipboard.writeText(acc).then(() => {
     showToast("✅ Account number copied to clipboard!");
   });
+}
+	
 function copyPayID() {
     const PayID = document.getElementById("PayID").innerText;
     navigator.clipboard.writeText(PayID).then(() => {
