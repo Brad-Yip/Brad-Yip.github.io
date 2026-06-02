@@ -113,16 +113,18 @@ pre div {
   <h2 style="text-align: center;">💸 Pay Me via ASB 💸</h2>
 <img src="Logo.png" alt="Logo" style="max-width: 100px; display: block; margin: 0 auto 1rem auto;">
  <pre id="bankDetails">
-🏦 ASB Bank  
+🏦 NZ ASB Bank  
 👤 Account Name: <span id="accountName">Brad Yip</span>  
 🔢 Account Number:  
 <span id="accountNumber">12-3136-0233747-00</span>  
-📝 Reference: Overload 2025
+📝 Reference: AniMaga 2026
+Pay ID: br4d_y1p@hotmail.com: <span id="PayID">br4d_y1p@hotmail.com</span>
 </pre>
 
 <div class="buttons">
   <button onclick="copyName()">👤 Copy Name</button>
-  <button onclick="copyAccount()">🔢 Copy Account Number</button>
+  <button onclick="copyAccount()">🔢 Copy NZ Account Number</button>
+  <button onclick="copyPayID()">🆔 Copy PayID</button>
 </div>
 
   <p style="margin-top: 1rem; font-size: 0.9rem; color: gray; text-align: center;">
@@ -153,6 +155,11 @@ function copyAccount() {
   navigator.clipboard.writeText(acc).then(() => {
     showToast("✅ Account number copied to clipboard!");
   });
+function copyPayID() {
+    const payID = document.getElementById("PayID").innerText;
+    navigator.clipboard.writeText(PayID).then(() => {
+      showToast("✅ PayID copied to clipboard!");
+    });
 }
 </script>
 </body>
