@@ -118,7 +118,7 @@ pre div {
 🔢 Account Number:  
 <span id="accountNumber">12-3136-0233747-00</span>  
 📝 Reference: AniMaga 2026
-Pay ID: br4d_y1p@hotmail.com: <span id="PayID">br4d_y1p@hotmail.com</span>
+Pay ID: <span id="PayID">br4d_y1p@hotmail.com</span>
 </pre>
 
 <div class="buttons">
@@ -156,7 +156,7 @@ function copyAccount() {
     showToast("✅ Account number copied to clipboard!");
   });
 function copyPayID() {
-    const payID = document.getElementById("PayID").innerText;
+    const PayID = document.getElementById("PayID").innerText;
     navigator.clipboard.writeText(PayID).then(() => {
       showToast("✅ PayID copied to clipboard!");
     });
